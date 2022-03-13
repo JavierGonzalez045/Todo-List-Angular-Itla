@@ -1,0 +1,11 @@
+<header class="header">
+  <h1>ToDo List</h1>
+  <input
+    class="new-todo"
+    placeholder="Ingrese el nombre de la tarea:"
+    autoFocus
+    [value]="text"
+    (keyup)="changeText($event)"
+    (keyup.enter)="addTodo()"
+  />
+</header>
