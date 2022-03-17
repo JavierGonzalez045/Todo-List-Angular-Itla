@@ -1,0 +1,8 @@
+<input
+  class="new-todo"
+  placeholder="Ingrese el nombre de la tarea:"
+  autoFocus
+  [value]="text"
+  (keyup)="changeText($event)"
+  (keyup.enter)="addTodo()"
+/>
