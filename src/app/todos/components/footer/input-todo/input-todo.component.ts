@@ -4,7 +4,6 @@ import { TodosService } from 'src/app/todos/services/todos.service';
 @Component({
   selector: 'app-input-todo',
   templateUrl: './input-todo.component.html',
-  styleUrls: ['./input-todo.component.scss'],
 })
 export class InputTodoComponent implements OnInit {
   text: string = '';

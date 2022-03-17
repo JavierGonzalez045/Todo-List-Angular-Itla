@@ -8,6 +8,8 @@ import { TodosService } from './services/todos.service';
 import { MainComponent } from './components/main/main.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { InputTodoComponent } from './components/footer/input-todo/input-todo.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,8 @@ const routes: Routes = [
     MainComponent,
     TodoComponent,
     FooterComponent,
+    InputTodoComponent,
+    SearchbarComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
   providers: [TodosService],
