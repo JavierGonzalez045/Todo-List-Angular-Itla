@@ -1,5 +1,5 @@
 <app-todos-header></app-todos-header>
-<app-searchbar></app-searchbar>
+<app-searchbar (onSearch)="handleSearching($event)"></app-searchbar>
 <div class="todoapp">
   <app-input-todo></app-input-todo>
   <app-todos-main></app-todos-main>

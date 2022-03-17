@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { TodosService } from '../../services/todos.service';
 
 @Component({
   selector: 'app-searchbar',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchbar.component.scss'],
 })
 export class SearchbarComponent implements OnInit {
-  constructor() {}
+  constructor(private todoService: TodosService) {}
+
+  @Output() onSearch: EventEmitter<string> = new EventEmitter();
 
   ngOnInit() {}
+
+  public handleSearch(event): void {
+    this.onSearch.emit(event.target.value);
+  }
 }

@@ -8,11 +8,22 @@
   />
   <label for="toggle-all">Mark all as completed</label>
   <ul class="todo-list">
-    <app-todos-todo
-      *ngFor="let todo of visibleTodos$ | async"
-      [todo]="todo"
-      [isEditing]="editingId === todo.id"
-      (setEditingId)="setEditingId($event)"
-    ></app-todos-todo>
+    <ng-container *ngIf="todosService.isFiltering; else name">
+      <app-todos-todo
+        *ngFor="let todo of todosService.filteredTodos$ | async"
+        [todo]="todo"
+        [isEditing]="editingId === todo.id"
+        (setEditingId)="setEditingId($event)"
+      ></app-todos-todo>
+    </ng-container>
+
+    <ng-template #name>
+      <app-todos-todo
+        *ngFor="let todo of visibleTodos$ | async"
+        [todo]="todo"
+        [isEditing]="editingId === todo.id"
+        (setEditingId)="setEditingId($event)"
+      ></app-todos-todo>
+    </ng-template>
   </ul>
 </section>
